@@ -1,0 +1,40 @@
+<p>This is the partial for view 3.</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+      </select>
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul>
+        <li ng-repeat="phone in phones">
+          <span>{{phone.name}}</span>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+
+      <ul>
+        <li ng-repeat="user in users">
+          <p>{{user.name}}</p>
+        </li>
+      </ul>
+
+      <p>Call REST service with jsonp</p>
+      <button id="fetchbtn" ng-click="fetch()">fetch</button><br>
+      <!-- <li ng-bind="response">response</li> -->
+      <pre id="default-spacing">{{ response | json }}</pre>
+      <pre>http status code: {{status}}</pre>
+      <pre>http response data: {{data}}</pre>
+
+    </div>
+  </div>
+</div>
